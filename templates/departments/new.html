@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1990s Example</title>
+    <style>
+      .error-message {
+        background-color: #ffe6e6; /* Light reddish background */
+        color: #cc0000; /* Darker red text color */
+        padding: 10px; /* Add some padding around the message */
+        border: 1px solid #ff9999; /* Optional: Add a slightly darker red border */
+        margin-bottom: 10px; /* Add some space below the message */
+        border-radius: 5px; /* Optional: Round the corners */
+      }
+
+      .button-form {
+        display: inline;
+      }
+      .link-button {
+        background: none;
+        border: none;
+        padding: 0;
+        color: blue; /* Or any link color you prefer */
+        text-decoration: underline; /* Optional: Add underline */
+        cursor: pointer;
+        font-size: inherit;
+        font-family: inherit;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure footer sticks to bottom */
+        margin: 0; /* Remove default body margin */
+        font-family: sans-serif;
+      }
+
+      header {
+        display: flex; /* Enable flexbox for layout */
+        justify-content: space-between; /* Distribute space between items */
+        align-items: center; /* Vertically align items */
+        padding: 10px 20px; /* Add padding to the header */
+        background-color: #f0f0f0; /* Example background color */
+      }
+
+      .left-links {
+        display: flex; /* Ensure left links are in a row */
+      }
+
+      .left-links a {
+        margin-right: 10px; /* Space between left links */
+        text-decoration: none; /* remove underline from links */
+        color: #333; /* Example link color */
+      }
+
+      .right-links {
+        display: flex; /* Ensure right links are in a row */
+      }
+
+      .right-links a {
+        margin-left: 10px; /* Space between right links */
+        text-decoration: none; /* remove underline from links */
+        color: #333; /* Example link color */
+      }
+
+      /* Optional: Style the links on hover */
+      a:hover {
+        color: blue; /* Example hover color */
+      }
+
+      main {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        justify-content: center; /* Center the form horizontally */
+        align-items: center; /* Center the form vertically */
+      }
+
+      form {
+        width: 50%; /* Adjust form width as needed */
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9; /* Optional: Add a light background */
+      }
+
+      label {
+        display: block; /* Make labels stack on top of inputs */
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select {
+        width: calc(100% - 12px); /* Full width minus padding and border */
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50; /* Example submit button color */
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      footer {
+        background-color: #333; /* Dark background for footer */
+        color: #fff; /* White text color */
+        text-align: center;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left-links">
+        <a href="/departments/new">New Department</a>
+      </div>
+      <div class="right-links">
+        <a href="/">Home</a>
+        <a href="/departments">Departments</a>
+      </div>
+    </header>
+
+    {% if error is not none %}
+    <p class="error-message">{{ error }}</p>
+    {% endif %}
+
+    <main>
+      <form method="POST" action="/departments/new">
+        <label for="name">Name:</label>
+        <!-- huom!!!! name-attribuutin arvo tekstikentässä vastaa request.formissa olevaa nimeä -->
+        <input type="text" id="name" name="name" required />
+
+        <br /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </main>
+
+    <footer>1990s example</footer>
+  </body>
+</html>

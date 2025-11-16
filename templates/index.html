@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1990s Example</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure footer sticks to bottom */
+        margin: 0; /* Remove default body margin */
+        font-family: sans-serif;
+      }
+
+      header {
+        background-color: #f0f0f0; /* Light gray background */
+        padding: 1rem;
+        display: flex;
+        justify-content: flex-end; /* Align link to the right */
+      }
+
+      nav a {
+        text-decoration: none; /* Remove underlines from links */
+        color: #333; /* Dark gray text color */
+        padding: 0.5rem 1rem; /* Add some padding around the link */
+      }
+      nav a:hover {
+        background-color: lightgray;
+      }
+
+      main {
+        flex: 1; /* Allow main content to take up available space */
+        padding: 20px;
+      }
+
+      footer {
+        background-color: #333; /* Dark background for footer */
+        color: #fff; /* White text color */
+        text-align: center;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/users">Users</a>
+        <a href="/departments">Departments</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Tervetuloa</h1>
+      <p>Tässä esimerkki siitä, miten ysärinettisivu toimi</p>
+    </main>
+
+    <footer>1990s example</footer>
+  </body>
+</html>
